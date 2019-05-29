@@ -13,24 +13,21 @@
         <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
 
         <script>
-
-          let googleURL = "https://accounts.google.com/o/oauth2/v2/auth";
+                    
+          let wordpressURL = "https://public-api.wordpress.com/oauth2/authorize";
 
           let options = {
-            client_id:'YOUR-GOOGLE-CLIENT-ID',
-            redirect_uri: 'YOUR-SERVER-URL/oauth',
-            scope: 'email openid profile',
-            prompt: 'consent',
+            client_id:'65844',
+            redirect_uri: 'http://localhost:3000/oauth',
             response_type: 'code'
           };
-
           let QueryString = Object.keys(options).map( (key,i) => {
             return `${key}=` + encodeURIComponent(options[key]);
           }).join("&");
 
-          let authURL = `${googleURL}?${QueryString}`;
+          let authURL = `${wordpressURL}?${QueryString}`;
 
-          $('#oauth').append(`<a href="${authURL}">Login With Google</a>`);
+          $('#oauth').append(`<a href="${authURL}">Login With wordPress</a>`);
 
         </script>
 
